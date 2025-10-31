@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry My Pretty Bunbun</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<style>
+    body {
+        background: #fff8f0;
+        font-family: 'Dancing Script', cursive;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 50px 20px;
+        color: #333;
+    }
+
+    h1 {
+        color: #ff69b4;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        max-width: 700px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .bouquet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .flower {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        animation: bloom 1.5s ease forwards;
+    }
+
+    .petal {
+        position: absolute;
+        width: 20px;
+        height: 30px;
+        background: #fff200; /* yellow petals */
+        border-radius: 50% 50% 0 0;
+        transform-origin: bottom center;
+    }
+
+    .petal:nth-child(1) { transform: rotate(0deg) translateY(-10px); }
+    .petal:nth-child(2) { transform: rotate(72deg) translateY(-10px); }
+    .petal:nth-child(3) { transform: rotate(144deg) translateY(-10px); }
+    .petal:nth-child(4) { transform: rotate(216deg) translateY(-10px); }
+    .petal:nth-child(5) { transform: rotate(288deg) translateY(-10px); }
+
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        background: #ffdd00; /* yellow center */
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    @keyframes bloom {
+        0% { transform: scale(0); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<h1>I'm Sorry My Pretty Bunbun</h1>
+
+<p>I'm sorry for everything, baby. I know lately I’ve been falling short, saying or doing things that hurt you even when that’s the last thing I’d ever want. I made this digital muna, something I could code with my own hands, hoping kahit papaano maramdaman mo how sorry I truly am. Hindi ko man maibigay ngayon ‘yung totoong bouquet, sana itong maliit na coding gift na ‘to ay ramdam mo pa rin ‘yung effort and love ko sa’yo.</p>
+
+<p>Baby, I know I’ve been bad bad sayo, and I really regret it. Alam ko dapat bait bait ako, dapat mas mahinahon, mas patient, mas gentle sayo. Kasi ikaw ‘yung taong dapat ko inaalagaan, hindi nasasaktan. You don’t deserve the pain I caused, and I’m really sorry for making you doubt the softness I promised to keep. From now on, I’ll do my best to show you that you’re safe with me — no more pain, just care and understanding.</p>
+
+<p>I hope ito muna, baby. This small thing, this digital daisy bouquet, is my way of saying that I’ll always try to make things right. You’re my baby, my bunbun, and you’ll always have me as your kakampi sa lahat, not someone who hurts you, but someone who will stay, protect, and love you through everything.</p>
+
+<div class="bouquet" id="bouquet"></div>
+
+<script>
+    const bouquet = document.getElementById('bouquet');
+
+    for(let i = 0; i < 7; i++){
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+
+        // Create petals
+        for(let j = 0; j < 5; j++){
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            flower.appendChild(petal);
+        }
+
+        // Center
+        const center = document.createElement('div');
+        center.classList.add('center');
+        flower.appendChild(center);
+
+        bouquet.appendChild(flower);
+    }
+</script>
+
+</body>
+</html>
